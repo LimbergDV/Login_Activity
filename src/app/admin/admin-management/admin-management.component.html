@@ -1,0 +1,18 @@
+<div>
+  <h2>Gestión de Usuarios</h2>
+  <table>
+    <tr *ngFor="let user of users; let i = index">
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <button (click)="deleteUser(i)">Eliminar</button>
+        <button (click)="editUser(i, 'Nombre', 'correo')">Editar</button>
+      </td>
+    </tr>
+  </table>
+
+  <h3>Agregar Usuario</h3>
+  <input [(ngModel)]="newUser.name" placeholder="Nombre" required>
+  <input [(ngModel)]="newUser.email" placeholder="Correo" type="number" required>
+  <button (click)="addUser()">Agregar</button>
+</div>
